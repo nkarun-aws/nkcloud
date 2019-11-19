@@ -1,0 +1,17 @@
+- name: update_cache
+  apt:
+    update_cache: yes
+  ignore_errors: yes
+  when:
+  - ansible_distribution == "Debian"
+
+- name: apache_install
+  apt:
+    name: apache
+    state: present
+
+- name: apache_start_enable
+  service: 
+    name: apache
+    enable: true
+    state: started
