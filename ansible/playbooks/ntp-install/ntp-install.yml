@@ -1,0 +1,8 @@
+---
+- name: install ntp service and start it
+- hosts: sample
+  gather_facts: true
+  become: true
+  roles:
+    - role: ntp-install
+    

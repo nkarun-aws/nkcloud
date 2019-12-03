@@ -1,0 +1,12 @@
+---
+- name: install ntp
+  package:
+    name: ntp
+    state: present
+
+- name: enable and start the service
+  service: 
+    name: ntp
+    state: restarted
+    enabled: yes
+    
